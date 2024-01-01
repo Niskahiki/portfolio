@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noel Kokkonen</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <a class="logo" href="#hero">NK</a>
+            <img id="mobile-cta" class="mobile-menu" src="images/menu.svg" alt="Open Navigation">
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Close Navigation">
+
+                <ul class="primary-nav">
+                    <li><a href="#hero">01. <span>About</span></a></li>
+                    <li><a href="#skill">02. <span>Skills</span></a></li>
+                    <li><a href="#experience">03. <span>Experience</span></a></li>
+                    <li><a href="#education">04. <span>Education</span></a></li>
+                    <li><a href="#work">05. <span>Work</span></a></li>
+                    <li><a href="#contact">06. <span>Contact</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <p class="subhead">Hi, my name is</p>
+            <h1 class="name">Noel Kokkonen</h1>
+            <h1 id="changing-title" class="hero-title">I Build <span></span></h1>
+            <p class="hero-text">I am eager and dedicated Software Developer based in Finland, driven by a passion for creating innovative solutions.</p>
+        </div>
+    </section>
+
+    <section id="skill" class="skills-section">
+        <div class="container">
+            <h2 class="skills-title">Skills</h2>
+            <ul class="skills-list">
+                <li>Mobile Developmet</li>
+                <li>Frontend Developmet</li>
+                <li>Backend Developmet</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="experience-title">Experience</h2>
+            <ul class="experience-list">
+                <li>
+                    <h4 class="place-title">Sofrware Developer</h4>
+                    <p class="place-name">Tietoweb Oy</p>
+                    <p class="place-time">June 2023 - Present</p>
+                    <p class="place-description">Software Development & Maintenance.</p>
+                </li>
+                <li>
+                    <h4 class="place-title">Intern</h4>
+                    <p class="place-name">Tietoweb Oy</p>
+                    <p class="place-time">January 2023 - March 2023</p>
+                    <p class="place-description">Worked on Mobile development.</p>
+                </li>
+                <li>
+                    <h4 class="place-title">TV Calibrator</h4>
+                    <p class="place-name">Power Finland Oy</p>
+                    <p class="place-time">May 2022 - June 2023</p>
+                    <p class="place-description">TV Calibration, Warehouse Work and Customer Service.</p>
+                </li>
+                <li>
+                    <h4 class="place-title">Fast Food Worker</h4>
+                    <p class="place-name">Hesburger</p>
+                    <p class="place-time">June 2021 - May 2022</p>
+                    <p class="place-description">Customer Service.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="education-section-title">Education</h2>
+            <ul class="education-list">
+                <li>
+                    <h4 class="education-title">Information and Communication Technology</h4>
+                    <p class="education-school">Metropolia University of Applied Sciences</p>
+                    <p class="education-time">January 2024 - 2028</p>
+                    <p class="education-grade">grade: <span>Bachelor's Degree</span></p>
+                </li>
+                <li>
+                    <h4 class="education-title">Information and Communication Technology</h4>
+                    <p class="education-school">Keski-Uudenmaan koulutuskuntayhtymä Keuda</p>
+                    <p class="education-time">August 2021 - June 2023</p>
+                    <p class="education-grade">grade: <span>Software Developer</span></p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="work" class="work-section">
+        <div class="container">
+            <h2 class="work-section-title">Work</h2>
+            <p class="work-section-text">Please checkout my <span>amazing</span> work on github</p>
+            <a href="https://github.com/Niskahiki">
+                <img class="work-section-img" src="images/github.svg" alt="github">
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="contact-section-title">Contact</h2>
+            <ul class="contact-list">
+                <li>
+                   <p>noel.kokkonen(at)gmail.com</p> 
+                </li>
+                <li>
+                    <a href="https://fi.linkedin.com/in/noel-kokkonen-a2116b255">
+                        <img src="images/linkedin.svg" alt="linkedin">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        const mobileBtn = document.getElementById('mobile-cta');
+        const nav = document.querySelector('nav');
+        const mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click', () => {
+            nav.classList.add('menu-btn');
+        })
+
+        mobileBtnExit.addEventListener('click', () => {
+            nav.classList.remove('menu-btn');
+        })
+
+        // Typing animation
+        function typeText(element, text, delay) {
+            setTimeout(function () {
+                var i = 0;
+                var intervalId = setInterval(function () {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(intervalId);
+
+                        // Call typing delete animation after delay
+                        setTimeout(function () {
+                            deleteText(element);
+                        }, 1000);
+                    }
+                }, 100);
+            }, delay);
+        }
+
+        // Typing delete animation
+        function deleteText(element) {
+            var currentText = element.innerHTML;
+            var i = currentText.length - 1;
+            var intervalId = setInterval(function () {
+                if (i >= 0) {
+                    element.innerHTML = currentText.substring(0, i);
+                    i--;
+                } else {
+                    clearInterval(intervalId);
+
+                    // Call typing animation after delay with new text
+                    setTimeout(function () {
+                        var nextText = getNextText(currentText);
+                        typeText(element, nextText, 0);
+                    }, 1000);
+                }
+            }, 100);
+        }
+
+        // Function that gets next text to be typed
+        function getNextText(currentText) {
+            const textArray = ["Softwares", "Solutions", "Future"];
+            var currentIndex = textArray.indexOf(currentText);
+            var nextIndex = (currentIndex + 1) % textArray.length;
+
+            return textArray[nextIndex];
+        }
+
+        // Highlight navbar item when at section
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("section");
+            const navItems = document.querySelectorAll(".primary-nav li a");
+
+            function highlightNavItem() {
+                const scrollPosition = window.scrollY;
+
+                sections.forEach((section, index) => {
+                    const top = section.offsetTop;
+                    const bottom = top + section.clientHeight;
+
+                    if (scrollPosition >= top && scrollPosition < bottom) {
+                        navItems.forEach(item => item.classList.remove('active'));
+                        navItems[index].classList.add("active");
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', highlightNavItem);
+        });
+
+        typeText(document.querySelector(".hero-title span"), "Softwares", 600);
+    </script>
+
+</body>
+</html>

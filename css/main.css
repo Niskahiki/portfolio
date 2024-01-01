@@ -1,0 +1,338 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+:root {
+  --primary-text-color: #b0bec5;
+  --heading-text-color: #00bcd4;
+  --primary-background-color: #0c1727;
+  --secondary-background-color: #081420;
+}
+
+body {
+  background: var(--primary-background-color);
+  margin: 0;
+  font-family: "Poppins";
+  color: var(--primary-text-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: var(--primary-background-color);
+  padding: 1em;
+}
+.navbar .logo {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--primary-text-color);
+  font-size: 1.5em;
+}
+.navbar .container {
+  display: flex;
+  place-content: space-between;
+}
+.navbar nav {
+  display: none;
+}
+.navbar nav .primary-nav a {
+  text-decoration: none;
+}
+.navbar nav .primary-nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.navbar .mobile-menu {
+  cursor: pointer;
+}
+
+section {
+  padding: 15em 2em;
+}
+
+.hero-section .subhead {
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  font-size: 0.9em;
+}
+.hero-section .name {
+  font-size: 2em;
+  line-height: 0.3em;
+  margin-top: 0.2em;
+}
+.hero-section .hero-title {
+  font-size: 2.4em;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+.hero-section .hero-title span {
+  color: var(--heading-text-color);
+  position: relative;
+  display: inline-block;
+  min-height: 1em;
+}
+.hero-section .hero-title span::after {
+  content: "|";
+  font-weight: lighter;
+  top: -0.1em;
+  color: #fff;
+  animation: typing 2s steps(20, end) forwards, blink-caret 0.5s step-end infinite alternate;
+}
+.hero-section .hero-text {
+  font-size: 1.2em;
+  letter-spacing: 0.05em;
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  font-style: italic;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.skills-section {
+  background: var(--secondary-background-color);
+}
+.skills-section .skills-title {
+  font-size: 1.7em;
+  letter-spacing: 0.1em;
+  padding: 0;
+  margin-bottom: 1em;
+}
+.skills-section .skills-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.skills-section .skills-list li {
+  position: relative;
+  font-size: 1.1em;
+  letter-spacing: 0.07em;
+  padding-left: 1.5em;
+  margin-bottom: 2em;
+  line-height: 1em;
+}
+.skills-section .skills-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--heading-text-color);
+  font-size: 2em;
+  margin-right: 0.5em;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.experience-section .experience-title {
+  font-size: 1.7em;
+  letter-spacing: 0.1em;
+  padding: 0;
+  margin-bottom: 2em;
+}
+.experience-section .experience-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.experience-section .experience-list li {
+  background: var(--secondary-background-color);
+  color: var(--primary-text-color);
+  padding: 1em;
+  border-radius: 20px;
+  margin-bottom: 3em;
+}
+.experience-section .experience-list li .place-title {
+  font-size: 1.5em;
+  margin: 0.5em 0em 0.5em 0em;
+  color: var(--heading-text-color);
+}
+.experience-section .experience-list li .place-name {
+  font-size: 1.2em;
+  line-height: 0.3em;
+  margin-top: 0.2em;
+}
+.experience-section .experience-list li .place-time {
+  font-size: 0.9em;
+  margin: 0;
+}
+.experience-section .experience-list li .place-description {
+  font-size: 1em;
+  margin-top: 0;
+}
+
+.education-section {
+  background-color: var(--secondary-background-color);
+}
+.education-section .education-section-title {
+  font-size: 1.7em;
+  letter-spacing: 0.1em;
+  padding: 0;
+  margin-bottom: 2em;
+}
+.education-section .education-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.education-section .education-list li {
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  padding: 1em;
+  border-radius: 20px;
+  margin-bottom: 3em;
+}
+.education-section .education-list .education-title {
+  color: var(--heading-text-color);
+  font-size: 1.5em;
+  margin: 0.5em 0em 0.5em 0em;
+}
+.education-section .education-list .education-school {
+  font-size: 1.2em;
+  margin-top: 0;
+}
+.education-section .education-list .education-time {
+  font-size: 0.9em;
+  margin: 0;
+}
+.education-section .education-list .education-grade {
+  margin-top: 0;
+}
+.education-section .education-list .education-grade span {
+  font-weight: bold;
+  color: var(--heading-text-color);
+}
+
+.work-section .work-section-title {
+  font-size: 1.7em;
+  letter-spacing: 0.1em;
+  padding: 0;
+  margin-bottom: 1em;
+}
+.work-section .work-section-text {
+  font-size: 1.2em;
+}
+.work-section .work-section-text span {
+  font-weight: bold;
+  color: var(--heading-text-color);
+}
+
+.contact-section {
+  background-color: var(--secondary-background-color);
+}
+.contact-section .contact-section-title {
+  font-size: 1.7em;
+  letter-spacing: 0.1em;
+  padding: 0;
+  margin-bottom: 2em;
+}
+.contact-section .contact-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.contact-section .contact-list p {
+  font-size: 1.1em;
+}
+.contact-section .contact-list img {
+  width: 8em;
+  height: 8em;
+}
+
+nav.menu-btn {
+  display: block;
+}
+
+nav {
+  position: fixed;
+  z-index: 999;
+  width: 50%;
+  right: 0;
+  top: 0;
+  background: var(--secondary-background-color);
+  height: 100vh;
+  padding: 1em;
+}
+nav .primary-nav {
+  list-style-type: none;
+  margin-top: 5em;
+}
+nav li a {
+  display: block;
+  padding: 0.5em;
+  font-size: 1.3em;
+  text-align: right;
+  cursor: pointer;
+  color: var(--heading-text-color);
+}
+nav li a span {
+  color: var(--primary-text-color);
+}
+nav li a:hover {
+  font-weight: bold;
+}
+
+.mobile-menu-exit {
+  float: right;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1082px) {
+  .mobile-menu, .mobile-menu-exit {
+    display: none;
+  }
+  .navbar .container {
+    display: grid;
+    grid-template-columns: 180px auto;
+    justify-content: unset;
+  }
+  .navbar nav {
+    display: flex;
+    justify-content: space-between;
+    background: none;
+    position: unset;
+    height: auto;
+    width: 100%;
+    padding: 0;
+  }
+  .navbar nav ul.primary-nav {
+    display: flex;
+    margin: 0;
+    margin-left: auto;
+  }
+  section {
+    padding: 20em 6em;
+  }
+  .hero-section {
+    width: 800px;
+  }
+  .experience-section .experience-list li {
+    width: 70%;
+    padding: 3em;
+  }
+  .experience-section .experience-list li .place-time {
+    margin-bottom: 0.5em;
+  }
+  .education-section .education-list li {
+    width: 70%;
+    padding: 3em;
+  }
+  .contact-section {
+    padding-bottom: 5em;
+  }
+}/*# sourceMappingURL=main.css.map */
